@@ -1,0 +1,102 @@
+/* Using the pseudo-class :root to define rules at the highest level of specificity. */
+:root {
+background-color: #5a4661;
+margin: 0;
+padding: 0;
+font-family: 'Quicksand', sans-serif;
+}
+
+/* I will be adding small decorative p elements before and after elements, so this will style them all at once! */
+::before :after {
+    font-family: 'Gugi', cursive;
+}
+
+/* Styles the page's primary header */
+.primary-header {
+    padding: 1rem;
+    background-color: #432b4a;
+}
+
+/* "turns off" the menu icon */
+.mobile-nav-toggle {
+    display: none;
+}
+
+/* Styles my logo. */
+.logo {
+    color: #2e132e;
+    filter: drop-shadow(0 0 .2rem #ac7dba);
+}
+
+/* Styles my nav as a whole. */
+nav {
+    display: flex;
+    background-color: #432b4a;
+    width: 100%;
+}
+
+/* Styles the ul inside my nav element. */
+.primary-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    justify-items: right;
+}
+
+/* Styles the a links inside the list items in the nav. */
+.primary-nav a {
+    color: #ac7dba;
+}
+
+/* Adds a decorative item after the nav that displays <html> */
+nav::after {
+    content: "<html>";
+    color: #636263;
+}
+
+/* Adds a media querry that adjusts the nav and adds the mobile-nav-toggle button in at smaller screen sizes. */
+@media (max-width: 35em) {
+    .primary-nav {
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 32%;
+        background-color: #2e132e;
+        opacity: 50%;
+        flex-direction: column;
+        padding: min(30vh, 8rem ) 3rem;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background: url("/assets/images/menuIcon.png");
+        background-repeat: no-repeat;
+        align-content: center;
+        width: 3.5em;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+/* Used to more specifically style my flex items. */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+/* Allows me to visually remove the menu button at larger screen sizes while maintaining accessability for screen readers. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
