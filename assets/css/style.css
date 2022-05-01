@@ -1,20 +1,51 @@
 /* Using the pseudo-class :root to define rules at the highest level of specificity. */
 :root {
-background-color: #5a4661;
+--primary-bkgd-clr: #5a4661;
+--primary-txt-clr: #e0dfdf;
+--alt-txt-clr: #ac7dba;
+--dark-clr: #291d2d;
+--pseudo-clr: #636263;
 margin: 0;
 padding: 0;
-font-family: 'Quicksand', sans-serif;
+--primary-font: "neue-haas-grotesk-display", sans-serif;
+--pseudo-font: "vox", sans-serif;
+background-color: var(--primary-bkgd-clr);
 }
 
 /* I will be adding small decorative p elements before and after elements, so this will style them all at once! */
 ::before :after {
-    font-family: 'Gugi', cursive;
+    font-family: var(--pseudo-font);
+    color: var(--pseudo-clr);
+    display: block;
+    font-size: medium;
 }
 
-/* Styles the page's primary header */
-.primary-header {
+/* applys my primary font to the entire html doc. */
+html {
+    font-family: var(--primary-font);
+}
+
+/* styles my header to be across the entire top of the page. */
+header {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Styles the page's header block */
+.primary-logo-container {
+    display: inline;
+    width: 100%;
+    justify-content: center;
     padding: 1rem;
-    background-color: #432b4a;
+    background-color: var(--dark-clr);
+}
+
+/* Styles my logo. */
+.primary-logo {
+    color: #2e132e;
+    filter: drop-shadow(0 0 .2rem var(--alt-txt-clr));
 }
 
 /* "turns off" the menu icon */
@@ -22,38 +53,47 @@ font-family: 'Quicksand', sans-serif;
     display: none;
 }
 
-/* Styles my logo. */
-.logo {
-    color: #2e132e;
-    filter: drop-shadow(0 0 .2rem #ac7dba);
-}
-
 /* Styles my nav as a whole. */
 nav {
-    display: flex;
-    background-color: #432b4a;
-    width: 100%;
+    position: relative;
+    margin-bottom: 0;
+    float: right;
 }
 
 /* Styles the ul inside my nav element. */
-.primary-nav {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: inline;
-    justify-items: right;
+nav .primary-nav li {
+    position: relative;
+    display: block;
+    align-content: center;
 }
 
+/* adds decorative lines between nav items. */
+nav .primary-nav li:not(:first-child)::after{
+    content: ""; 
+    border: .25em solid var(--primary-bkgd-clr);
+    border-width: 0 0 .25em .25em;
+    position: absolute; 
+    top: -3px; 
+    right: 0; 
+    width: 100%;
+  }
+
 /* Styles the a links inside the list items in the nav. */
-.primary-nav a {
-    color: #ac7dba;
+nav .primary-nav li a {
+    position: relative;
+    font-size: 1.4em;
+    display: block;
+    padding: 1em 1em;
+    margin-left: 1rem;
+    color: var(--alt-txt-clr);
+    text-decoration: none;
 }
 
 /* Adds a decorative item after the nav that displays <html> */
-nav::after {
+/* nav::after {
     content: "<html>";
     color: #636263;
-}
+} */
 
 /* Adds a media querry that adjusts the nav and adds the mobile-nav-toggle button in at smaller screen sizes. */
 @media (max-width: 35em) {
@@ -82,6 +122,52 @@ nav::after {
     }
 }
 
+main {
+    color: var(--primary-txt-clr);
+}
+
+main .pseudo-false::before {
+    content: "</html>";
+    /* display: block;
+    font-size: medium;
+    color: var(--pseudo-clr);
+    font-family: var(--pseudo-font); */
+
+}
+
+main .pseudo-false::after {
+    content: "<body>";
+    /* display: block;
+    font-size: medium;
+    margin-left: 1.25rem;
+    color: var(--pseudo-clr);
+    font-family: var(--pseudo-font); */
+}
+
+main h1 {
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 5rem 0 1.5rem 2.5rem;
+}
+
+main h1::before {
+    content: "<h1>";
+    /* display: block;
+    font-size: medium;
+    color: var(--pseudo-clr);
+    font-family: var(--pseudo-font); */
+}
+
+main h1::after {
+    content: "</h1>";
+}
+
+main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h1::after {
+    display: block;
+    font-size: medium;
+    color: var(--pseudo-clr);
+    font-family: var(--pseudo-font);
+}
 /* Used to more specifically style my flex items. */
 .flex {
     display: flex;
