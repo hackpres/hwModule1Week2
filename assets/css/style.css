@@ -1,10 +1,10 @@
 /* Using the pseudo-class :root to define rules at the highest level of specificity. */
 :root {
---primary-bkgd-clr: #5a4661;
---primary-txt-clr: #e0dfdf;
---alt-txt-clr: #ac7dba;
---dark-clr: #291d2d;
---pseudo-clr: #636263;
+--primary-bkgd-clr: hsl(284, 16%, 33%);
+--primary-txt-clr: 	hsl(0, 2%, 88%);
+--alt-txt-clr: hsl(286, 31%, 61%);
+--dark-clr: 	hsl(286, 26%, 23%);
+--pseudo-clr: 	hsl(300, 1%, 39%);
 --primary-font: "neue-haas-grotesk-display", sans-serif;
 --pseudo-font: "vox", sans-serif;
 background-color: var(--primary-bkgd-clr);
@@ -25,8 +25,15 @@ header {
     position: relative;
     width: 100%;
     justify-content: left;
-    padding: 1em;
     background-color: var(--dark-clr);
+    box-shadow: 0.1rem 1px var(--alt-txt-clr);
+}
+
+.primary-logo-container {
+    padding: 1.5rem;
+    margin: 0;
+    background-color: hsl(286, 46%, 18%);
+    box-shadow: .15rem 0 1px var(--primary-bkgd-clr);
 }
 
 /* Styles my logo. */
@@ -57,7 +64,7 @@ nav .primary-nav li {
 /* adds decorative lines between nav items. */
 nav .primary-nav li:not(:first-child)::after{
     content: ""; 
-    border: .25em solid var(--primary-bkgd-clr);
+    border: .25em solid var(--pseudo-clr);
     border-width: 0 0 .25em .25em;
     position: absolute; 
     top: -3px; 
@@ -123,6 +130,7 @@ main {
 main .pseudo-false::before {
     content: "</html>";
     margin-left: 1.5rem;
+    margin-top: .5rem;
 }
 
 main .pseudo-false::after {
@@ -138,6 +146,9 @@ main h1 {
 
 .hacker {
     color: var(--alt-txt-clr);
+    --webkit-text-stroke-width: 1px var(--primary-txt-clr);
+    text-shadow: -1px 1px 2px var(--alt-txt-clr);
+    
 }
 
 main h1::before {
@@ -149,9 +160,10 @@ main h1::after {
 }
 
 main h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 200;
-    margin: 0 0 1.5rem 3.5rem;
+    margin: 0 0 25rem 3.5rem;
+    position: relative;
 }
 
 main h2::before {
@@ -160,20 +172,63 @@ main h2::before {
 
 main h2::after {
     content: "</h2>";
+    }
+
+main .section-heading {
+    font-size: 5.7em;
+    margin-left: 1.5rem;
+    color: var(--alt-txt-clr);
+    opacity: 40%;
+    filter: drop-shadow(-.15rem -.15rem .08rem var(--primary-txt-clr));
+    display: inline;
 }
 
-main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before {
+.h3-before {
+    margin-left: 3.5rem;
+}
+
+.h3-after {
+    display: inline;
+}
+
+#about {
+    font-family: var(--primary-font);
+    margin: 1rem 0 20rem 3.5rem;
+    width: 70%;
+    line-height: 1.15em;
+}
+
+#about::before {
+    content: "<p>";
+}
+
+#about::after {
+    content: "</p>";
+}
+
+#contact-link {
+    color: var(--primary-txt-clr);
+    text-decoration: none;
+}
+
+#contact-link:hover {
+    cursor: pointer;
+}
+
+main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, #about::before {
     display: block;
     font-size: 1rem;
     color: var(--pseudo-clr);
     font-family: var(--pseudo-font);
+    z-index: -1;
     margin-block: .25rem;
 }
 
-main h1::after, main h2::after {
+main h1::after, main h2::after, .h3-after, #about::after {
     font-size: medium;
     color: var(--pseudo-clr);
     font-family: var(--pseudo-font);
+    z-index: -1;
     margin-inline: .25rem;
 }
 
