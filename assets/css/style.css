@@ -123,6 +123,8 @@ nav .primary-nav li a {
     }
 }
 
+
+
 main {
     color: var(--primary-txt-clr);
 }
@@ -193,16 +195,16 @@ main .section-heading {
 
 #about {
     font-family: var(--primary-font);
-    margin: 1rem 0 20rem 3.5rem;
+    margin: 1rem 0 10rem 3.5rem;
     width: 70%;
     line-height: 1.15em;
 }
 
-#about::before {
+#about::before, #skills::before {
     content: "<p>";
 }
 
-#about::after {
+#about::after, #skills::after {
     content: "</p>";
 }
 
@@ -215,7 +217,45 @@ main .section-heading {
     cursor: pointer;
 }
 
-main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, #about::before {
+#skills {
+    font-family: var(--primary-font);
+    margin: 1rem 0 1em 3.5rem;
+    width: 70%;
+    line-height: 1.15em;
+}
+
+.skills-tree ul {
+    list-style: none;
+    position: relative;
+    
+}
+
+.skills-tree ul li {
+    position: absolute;
+}
+.skills-tree ul .html-logo-container {
+    transform: translateX(150px);
+}
+
+.skills-tree ul .css-logo-container {
+    transform: translate(100px, 90px);
+}
+
+.skills-tree ul .js-logo-container {
+    transform: translate(200px, 90px);
+}
+
+.html-logo-container, .css-logo-container, .js-logo-container {
+    width: 20%;
+}
+
+.html-logo, .css-logo, .js-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, #about::before, #skills::before {
     display: block;
     font-size: 1rem;
     color: var(--pseudo-clr);
@@ -224,7 +264,7 @@ main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2:
     margin-block: .25rem;
 }
 
-main h1::after, main h2::after, .h3-after, #about::after {
+main h1::after, main h2::after, .h3-after, #about::after, #skills::after {
     font-size: medium;
     color: var(--pseudo-clr);
     font-family: var(--pseudo-font);
