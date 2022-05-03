@@ -130,7 +130,7 @@ main {
 }
 
 main .pseudo-false::before {
-    content: "</html>";
+    content: "<html>";
     margin-left: 1.5rem;
     margin-top: .5rem;
 }
@@ -253,12 +253,110 @@ main .section-heading {
 }
 
 .html-logo, .css-logo, .js-logo {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
 }
 
-main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, #about::before, #skills::before {
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25em;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="text"] ,select, textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    Width: 80%;
+    padding: .6rem 1.2rem;
+    margin-bottom: .8rem;
+    display: inline-block;
+    border: 2px solid var(--dark-clr);
+    border-radius: .35rem;
+    background-color: hsl(286, 46%, 18%, 0.2);
+    color: var(--alt-txt-clr);
+    resize: none;
+}
+
+input[type="text"]:focus ,select:focus, textarea:focus {
+    border: 2px solid var(--alt-txt-clr);
+    filter: drop-shadow(0rem 0rem 0.15rem var(--dark-clr));
+    color: var(--alt-txt-clr);
+}
+
+input[type="text"]::placeholder ,select::placeholder, textarea::placeholder {
+    color: var(--alt-txt-clr);
+}
+
+form label {
+    color: var(--primary-txt-clr);
+    font-size: 1.15em;
+    display: block;
+    margin-bottom: .8rem;
+}
+
+#fname, #lname, #company, #country, #details {
+    display: inline-block;
+}
+
+#details {
+    height: 9rem;
+}
+
+.submit {
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    margin: 1em 0;
+    background-color: hsl(286, 46%, 18%, 0.5);
+    color: var(--primary-txt-clr);
+    padding: .6rem 1.2rem;
+    border: 2px solid var(--dark-clr);
+    border-radius: .35rem;
+}
+
+.submit:hover {
+    box-shadow: inset 0 -.25em .45em var(--pseudo-clr);
+}
+
+#preform::before {
+    content: "<form>";
+    margin-left: 3.5rem;
+}
+
+#form-section::after {
+    content: "</form>";
+    margin-left: 3.5rem;
+    font-size: 1rem;
+    color: var(--pseudo-clr);
+    font-family: var(--pseudo-font);
+    z-index: -1;
+}
+
+#false-end {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+#false-end::before {
+    content: "</body>";
+    display: block;
+    margin-left: 2.45rem;
+}
+
+#false-end::after {
+    content: "</html>";
+    display: block;
+    margin-left: .5rem;
+}
+
+main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, #about::before, #skills::before, #preform::before, #false-end::before {
     display: block;
     font-size: 1rem;
     color: var(--pseudo-clr);
@@ -267,7 +365,7 @@ main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2:
     margin-block: .25rem;
 }
 
-main h1::after, main h2::after, .h3-after, #about::after, #skills::after {
+main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false-end::after {
     font-size: medium;
     color: var(--pseudo-clr);
     font-family: var(--pseudo-font);
