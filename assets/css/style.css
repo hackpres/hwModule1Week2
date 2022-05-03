@@ -31,6 +31,9 @@ header {
 }
 
 .primary-logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     padding: 1.5rem;
     margin: 0;
     background-color: hsl(286, 46%, 18%);
@@ -84,47 +87,6 @@ nav .primary-nav li a {
     color: var(--alt-txt-clr);
     text-decoration: none;
 }
-
-/* Adds a media querry that adjusts the nav and adds the mobile-nav-toggle button in at smaller screen sizes. */
-@media (max-width: 35em) {
-    .primary-nav {
-        position: fixed;
-        z-index: 1000;
-        inset: 0 0 0 32%;
-        background: hsl(300 42% 13% / 0.9);
-        flex-direction: column;
-        padding: min(30vh, 8rem ) 3rem;
-
-        transform: translateX(100%);
-        transition: transform 450ms ease-in-out;
-    }
-    .primary-nav[data-visible="true"] {
-        transform: translateX(0%);
-    }
-
-    @supports (backdrop-filter: blur(.25rem)) {
-        .primary-nav {
-            background: hsl(300 42% 13% / 0.5);
-            backdrop-filter: blur(.25rem);
-        }
-    }
-
-    .mobile-nav-toggle {
-        display: block;
-        position: absolute;
-        z-index: 9999;
-        background: url("/assets/images/menuIcon.png");
-        background-repeat: no-repeat;
-        align-content: center;
-        width: 3.5em;
-        border: 0;
-        aspect-ratio: 1;
-        top: 2rem;
-        right: 2rem;
-    }
-}
-
-
 
 main {
     color: var(--primary-txt-clr);
@@ -228,6 +190,7 @@ main .section-heading {
 .skills-tree {
     margin-bottom: 14rem;
 }
+
 .skills-tree ul {
     list-style: none;
     position: relative;
@@ -237,6 +200,7 @@ main .section-heading {
 .skills-tree ul li {
     position: absolute;
 }
+
 .skills-tree ul .html-logo-container {
     transform: translateX(150px);
 }
@@ -331,7 +295,7 @@ form label {
     margin-left: 3.5rem;
 }
 
-#form-section::after {
+.form-section::after {
     content: "</form>";
     margin-left: 3.5rem;
     font-size: 1rem;
@@ -360,6 +324,7 @@ form label {
 .fa-instagram, .fa-linkedin, .fa-snapchat {
     background: var(--alt-txt-clr-dim);
     color: var(--dark-clr);
+    text-decoration: none;
 }
 
 #false-end {
@@ -394,6 +359,137 @@ main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false
     font-family: var(--pseudo-font);
     z-index: -1;
     margin-inline: .25rem;
+}
+
+/* Adds a media querry that adjusts the nav and adds the mobile-nav-toggle button in at smaller screen sizes. */
+@media (max-width: 35em) {
+    .primary-nav {
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 32%;
+        background: hsl(300 42% 13% / 0.9);
+        flex-direction: column;
+        padding: min(30vh, 8rem ) 3rem;
+
+        transform: translateX(100%);
+        transition: transform 450ms ease-in-out;
+    }
+    .primary-nav[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    @supports (backdrop-filter: blur(.25rem)) {
+        .primary-nav {
+            background: hsl(300 42% 13% / 0.5);
+            backdrop-filter: blur(.25rem);
+        }
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background: url("/assets/images/menuIcon.png");
+        background-repeat: no-repeat;
+        align-content: center;
+        width: 3.5em;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+@media screen and (max-width: 60rem) and (min-width: 35rem) {
+    header {
+        justify-content: flex-end;
+        height: 106px;
+    }
+    
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .primary-nav {
+        display: flex;
+        margin-right: 2em;
+    }
+
+    nav .primary-nav li a {
+        position: relative;
+        font-size: clamp(1rem, 2.9vw, 2rem);
+        padding: clamp(.25rem, .5vw, 1rem);
+        color: var(--alt-txt-clr);
+        text-decoration: none;
+    }
+
+    nav .primary-nav li:not(:first-child)::after{
+        content: ""; 
+        border-left: .25em solid var(--pseudo-clr);
+        position: absolute; 
+        left: .5em;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    main h1 {
+        font-size: clamp(2.4rem, 10vw, 5rem)
+    }
+
+    main .title-section h2 {
+        font-size: clamp(1.3rem, 5vw, 2.7rem);
+    }
+
+    main .section-heading {
+        font-size: clamp(4.7rem, 15vw, 9rem);
+    }
+
+    main #about, main #skills {
+        font-size: clamp(1rem, 4.65vw, 2rem);
+    }
+
+    .skills-tree {
+        margin-bottom: clamp(14rem, 50vw, 25rem);
+    }
+
+    .skills-tree ul .html-logo-container {
+        transform: translateX(45vw);
+    }
+    
+    .skills-tree ul .css-logo-container {
+        transform: translate(25vw, 17vw);
+    }
+    
+    .skills-tree ul .js-logo-container {
+        transform: translate(65vw, 17vw);
+    }
+
+    .form-container {
+        /* margin: 0; */
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"] ,select, textarea {
+        width: clamp(80%, 50vw, 170%);
+        margin-bottom: clamp(.8rem, 2.5vw, 1.25rem);
+        justify-content: center;
+    }
+
+    input[type="text"]::-webkit-input-placeholder ,select, textarea::-webkit-input-placeholder {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        align-items: center;
+    }
+
+    form label {
+        font-size: clamp(1.15rem, 3vw, 1.75rem);
+    }
 }
 
 /* Used to more specifically style my flex items. */
