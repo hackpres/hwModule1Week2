@@ -221,6 +221,7 @@ main .section-heading {
     width: 70%;
     height: 70%;
     object-fit: cover;
+    filter: drop-shadow(0 0 2rem var(--dark-clr));
 }
 
 .form-container {
@@ -278,7 +279,7 @@ form label {
     width: 30%;
     text-align: center;
     justify-content: center;
-    margin: 1em 0;
+    margin: 1em 0 12rem 0;
     background-color: hsl(286, 46%, 18%, 0.5);
     color: var(--primary-txt-clr);
     padding: .6rem 1.2rem;
@@ -318,7 +319,7 @@ form label {
 }
 
 .fa:hover {
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .fa-instagram, .fa-linkedin, .fa-snapchat {
@@ -362,7 +363,7 @@ main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false
 }
 
 /* Adds a media querry that adjusts the nav and adds the mobile-nav-toggle button in at smaller screen sizes. */
-@media (max-width: 35em) {
+@media screen and (max-width: 35em) {
     .primary-nav {
         position: fixed;
         z-index: 1000;
@@ -466,10 +467,6 @@ main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false
         transform: translate(65vw, 17vw);
     }
 
-    .form-container {
-        /* margin: 0; */
-    }
-
     form {
         display: flex;
         flex-direction: column;
@@ -489,6 +486,98 @@ main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false
 
     form label {
         font-size: clamp(1.15rem, 3vw, 1.75rem);
+    }
+}
+
+@media screen and (min-width: 60rem) {
+    header {
+        justify-content: flex-end;
+        height: 106px;
+    }
+    
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .primary-nav {
+        display: flex;
+        margin-right: 2em;
+    }
+
+    nav .primary-nav li a {
+        position: relative;
+        font-size: clamp(1rem, 2.9vw, 2rem);
+        padding: clamp(.25rem, .5vw, 1rem);
+        color: var(--alt-txt-clr);
+        text-decoration: none;
+    }
+
+    nav .primary-nav li:not(:first-child)::after{
+        content: ""; 
+        border-left: .25em solid var(--pseudo-clr);
+        position: absolute; 
+        left: .5em;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    main h1 {
+        font-size: clamp(2.4rem, 10vw, 6rem)
+    }
+
+    main .title-section h2 {
+        font-size: clamp(1.3rem, 5vw, 3.25rem);
+    }
+
+    main .section-heading {
+        font-size: clamp(4.7rem, 15vw, 15rem);
+    }
+
+    main #about, main #skills {
+        font-size: clamp(1rem, 4.65vw, 2rem);
+    }
+
+    .skills-tree {
+        margin-bottom: clamp(14rem, 50vw, 39rem);
+    }
+
+    .skills-tree ul .html-logo-container {
+        transform: translateX(45vw);
+    }
+    
+    .skills-tree ul .css-logo-container {
+        transform: translate(25vw, 17vw);
+    }
+    
+    .skills-tree ul .js-logo-container {
+        transform: translate(65vw, 17vw);
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"], select, textarea {
+        width: clamp(80%, 60vw, 250%);
+        margin-bottom: clamp(.8rem, 2.5vw, 2.25rem);
+        justify-content: center;
+    }
+
+    input[type="text"], select {
+        height: 5rem;
+    }
+
+    input[type="text"]::-webkit-input-placeholder ,select, textarea::-webkit-input-placeholder {
+        font-size: clamp(1rem, 3vw, 2.05rem);
+        align-items: center;
+    }
+
+    form label {
+        font-size: clamp(1.15rem, 3vw, 2.25rem);
     }
 }
 
