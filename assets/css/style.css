@@ -156,9 +156,43 @@ main .section-heading {
     display: inline;
 }
 
+.project-wall {
+    display: grid;
+    height: 7rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 6rem;
+}
+
+.wall-item {
+    background-color: var(--pseudo-clr);
+    background-size: cover;
+    margin: .25rem;
+    overflow: hidden;
+}
+
+.jf-form {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#jf-form {
+    height: 6.5rem;
+    margin: auto;
+}
+
+.horiseon {
+    grid-column: 2;
+}
+
+.wall-item:hover image {
+    opacity: 0.3;
+}
+
 #about {
     font-family: var(--primary-font);
-    margin: 1rem 0 10rem 3.5rem;
+    margin: 1rem 0 6rem 3.5rem;
     width: 70%;
     line-height: 1.15em;
 }
@@ -188,7 +222,7 @@ main .section-heading {
 }
 
 .skills-tree {
-    margin-bottom: 14rem;
+    margin-bottom: 16rem;
 }
 
 .skills-tree ul {
@@ -279,7 +313,7 @@ form label {
     width: 30%;
     text-align: center;
     justify-content: center;
-    margin: 1em 0 12rem 0;
+    margin: 1em 0 6rem 0;
     background-color: hsl(286, 46%, 18%, 0.5);
     color: var(--primary-txt-clr);
     padding: .6rem 1.2rem;
