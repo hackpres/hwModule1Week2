@@ -164,44 +164,49 @@ main .section-heading {
 }
 
 .wall-item {
-    background-color: var(--pseudo-clr);
+    /* background-color: var(--pseudo-clr); */
     background-size: cover;
     margin: .25rem;
     overflow: hidden;
-}
-
-.jf-form {
-    grid-column: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#jf-form {
-    height: 6.5rem;
-    margin: auto;
+.jf-form {
+    grid-column: 1;
 }
 
 .horiseon {
     grid-column: 2;
 }
 
-.wall-item:hover image {
-    opacity: 0.3;
+.passwordGen {
+    grid-column: 3;
 }
 
-#about {
+#jf-form, #passwordGen, #horiseon{
+    height: 6.5rem;
+    margin: auto;
+}
+
+.wall-item:hover {
+    opacity: 0.5;
+    transform: scale(1.08);
+}
+
+.about {
     font-family: var(--primary-font);
     margin: 1rem 0 6rem 3.5rem;
     width: 70%;
     line-height: 1.15em;
 }
 
-#about::before, #skills::before {
+.about::before, .skills::before {
     content: "<p>";
 }
 
-#about::after, #skills::after {
+.about::after, .skills::after {
     content: "</p>";
 }
 
@@ -214,7 +219,7 @@ main .section-heading {
     cursor: pointer;
 }
 
-#skills {
+.skills {
     font-family: var(--primary-font);
     margin: 1rem 0 2em 3.5rem;
     width: 70%;
@@ -379,7 +384,7 @@ form label {
     margin-left: .5rem;
 }
 
-main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, #about::before, #skills::before, #preform::before, #false-end::before {
+main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, .about::before, .skills::before, #preform::before, #false-end::before {
     display: block;
     font-size: 1rem;
     color: var(--pseudo-clr);
@@ -388,7 +393,7 @@ main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2:
     margin-block: .25rem;
 }
 
-main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false-end::after {
+main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false-end::after {
     font-size: medium;
     color: var(--pseudo-clr);
     font-family: var(--pseudo-font);
@@ -480,13 +485,21 @@ main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false
     main .section-heading {
         font-size: clamp(4.7rem, 15vw, 9rem);
     }
+    
+    .wall-item {
+        margin: clamp(.25rem, .75vw, 1.25rem);
+    }
 
-    main #about, main #skills {
+    .project-wall, #jf-form, #horiseon, #passwordGen {
+        height: clamp(6.5rem, 30vw, 17rem);
+    }
+
+    main .about, main .skills {
         font-size: clamp(1rem, 4.65vw, 2rem);
     }
 
     .skills-tree {
-        margin-bottom: clamp(14rem, 50vw, 25rem);
+        margin-bottom: clamp(14rem, 50vw, 40rem);
     }
 
     .skills-tree ul .html-logo-container {
@@ -569,12 +582,20 @@ main h1::after, main h2::after, .h3-after, #about::after, #skills::after, #false
         font-size: clamp(4.7rem, 15vw, 15rem);
     }
 
-    main #about, main #skills {
+    .wall-item {
+        margin: clamp(.75rem, 3vw, 1rem);
+    }
+
+    .project-wall, #jf-form, #horiseon, #passwordGen {
+        height: clamp(18rem, 35vw, 30rem);
+    }
+
+    main .about, main .skills {
         font-size: clamp(1rem, 4.65vw, 2rem);
     }
 
     .skills-tree {
-        margin-bottom: clamp(14rem, 50vw, 39rem);
+        margin-bottom: clamp(14rem, 50vw, 60rem);
     }
 
     .skills-tree ul .html-logo-container {
