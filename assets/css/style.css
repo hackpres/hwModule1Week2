@@ -1,11 +1,11 @@
 /* Using the pseudo-class :root to define rules at the highest level of specificity. */
 :root {
---primary-bkgd-clr: hsl(284, 16%, 33%);
+--primary-bkgd-clr: hsl(285, 21%, 7%);
 --primary-txt-clr: 	hsl(0, 2%, 88%);
 --alt-txt-clr: hsl(286, 31%, 61%);
---alt-txt-clr-dim: hsl(286, 31%,61%, .6);
---dark-clr: 	hsl(286, 26%, 23%);
---pseudo-clr: 	hsl(300, 1%, 39%);
+--alt-txt-clr-dim: rgba(172, 125, 186, 0.687);
+--dark-clr: 	hsl(286, 28%, 16%);
+--pseudo-clr: 	hsl(300, 7%, 30%);
 --primary-font: "neue-haas-grotesk-display", sans-serif;
 --pseudo-font: "vox", sans-serif;
 background-color: var(--primary-bkgd-clr);
@@ -171,6 +171,26 @@ main .section-heading {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.wall-text-container {
+    background-color: rgba(0, 0, 0, .65);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.wall-text {
+    color: var(--primary-txt-clr);
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px .15rem var(--pseudo-clr));
 }
 
 .jf-form {
@@ -190,9 +210,12 @@ main .section-heading {
     margin: auto;
 }
 
-.wall-item:hover {
-    opacity: 0.5;
+.wall-item:hover{
     transform: scale(1.08);
+}
+
+.wall-text-container:hover {
+    opacity: 1;
 }
 
 .about {
@@ -418,6 +441,10 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         transform: translateX(0%);
     }
 
+    .primary-logo-container {
+        padding-right: 100%;
+    }
+
     @supports (backdrop-filter: blur(.25rem)) {
         .primary-nav {
             background: hsl(300 42% 13% / 0.5);
@@ -484,6 +511,10 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
 
     main .section-heading {
         font-size: clamp(4.7rem, 15vw, 9rem);
+    }
+
+    .h3-before, .h3-after, #pseudo-false::before, #pseudo-false::after ,#false-end::before, #false-end::after{
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
     }
     
     .wall-item {
