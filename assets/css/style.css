@@ -131,12 +131,11 @@ main .pseudo-false::after {
 .avatar-container {
     position: absolute;
     top: 32rem;
-    right: -14.5rem;
+    right: 0
 }
 
 .avatar {
     height: 25rem;
-    transform: rotate(-18deg);
 }
 
 main h1 {
@@ -176,7 +175,7 @@ main h2::after {
     }
 
 main .section-heading {
-    font-size: 4.7em;
+    font-size: 4.6em;
     margin-left: 1.5rem;
     color: var(--alt-txt-clr);
     opacity: 40%;
@@ -198,7 +197,7 @@ main .section-heading {
     justify-content: space-around;
     display: block;
     text-align: center;
-    height: 12rem;
+    height: 10rem;
 }
 
 .work-secondary {
@@ -541,7 +540,7 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
 
     .avatar-container {
         top: 4rem;
-        right: clamp(-22rem, -35vw, -17rem);
+        right: 0;
     }
     
     .avatar {
@@ -656,7 +655,7 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
 
     .avatar-container {
         top: 4rem;
-        right: clamp(-40rem, -40vw, -22rem);
+        right: 0;
     }
     
     .avatar {
