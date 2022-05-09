@@ -52,18 +52,22 @@ header {
     display: none;
 }
 
-.menuIcon-top, .menuIcon-middle, .menuIcon-bottom {
+.menuIcon-top, 
+.menuIcon-middle, 
+.menuIcon-bottom {
     height: .35rem;
     width: 85%;
     border-radius: 30px;
     background-color: hsl(0, 0%, 71%);
 }
 
-.menuIcon-top, .menuIcon-middle {
+.menuIcon-top, 
+.menuIcon-middle {
     margin-bottom: .25rem;
 }
 
-.menuIcon-top, .menuIcon-bottom {
+.menuIcon-top, 
+.menuIcon-bottom {
     float: right;
 }
 
