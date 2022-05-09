@@ -156,65 +156,65 @@ main .section-heading {
     display: inline;
 }
 
-.project-wall {
-    display: grid;
-    height: 7rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 6rem;
+.work-primary {
+    flex: 1;
+    flex-basis: 100%;
+    justify-content: space-around;
+    display: block;
+    text-align: center;
+    height: 12rem;
 }
 
-.wall-item {
-    /* background-color: var(--pseudo-clr); */
-    background-size: cover;
-    margin: .25rem;
-    overflow: hidden;
+.work-secondary {
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 7rem;
+}
+
+.work-block {
+    display: inline-block;
+    text-align: center;
+    height: 9rem;
+}
+
+#horiseon, #password-gen {
+    height: 100%;
+}
+
+#jf-form, #horiseon, #password-gen {
     position: relative;
 }
 
-.wall-text-container {
-    background-color: rgba(0, 0, 0, .65);
-    height: 100%;
-    width: 100%;
+.work-text-container {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     opacity: 0;
 }
 
-.wall-text {
+.work-secondary-text-container {
+    position: absolute;
+    top: -8.15rem;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+}
+
+.work-text {
+    font-size: 2rem;
     color: var(--primary-txt-clr);
-    font-family: var(--primary-font);
-    font-weight: 700;
-    font-size: 3rem;
-    filter: drop-shadow(2px 2px .15rem var(--pseudo-clr));
 }
 
-.jf-form {
-    grid-column: 1;
-}
-
-.horiseon {
-    grid-column: 2;
-}
-
-.passwordGen {
-    grid-column: 3;
-}
-
-#jf-form, #passwordGen, #horiseon{
-    height: 6.5rem;
-    margin: auto;
-}
-
-.wall-item:hover{
-    transform: scale(1.08);
-}
-
-.wall-text-container:hover {
+.work-text-container:hover, .work-secondary-text-container:hover {
     opacity: 1;
 }
 
@@ -465,6 +465,8 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         top: 2rem;
         right: 2rem;
     }
+
+    
 }
 
 @media screen and (max-width: 60rem) and (min-width: 35rem) {
@@ -517,13 +519,7 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         font-size: clamp(1rem, 2.5vw, 1.5rem);
     }
     
-    .wall-item {
-        margin: clamp(.25rem, .75vw, 1.25rem);
-    }
-
-    .project-wall, #jf-form, #horiseon, #passwordGen {
-        height: clamp(6.5rem, 30vw, 17rem);
-    }
+    
 
     main .about, main .skills {
         font-size: clamp(1rem, 4.65vw, 2rem);
@@ -613,13 +609,6 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         font-size: clamp(4.7rem, 15vw, 15rem);
     }
 
-    .wall-item {
-        margin: clamp(.75rem, 3vw, 1rem);
-    }
-
-    .project-wall, #jf-form, #horiseon, #passwordGen {
-        height: clamp(18rem, 35vw, 30rem);
-    }
 
     main .about, main .skills {
         font-size: clamp(1rem, 4.65vw, 2rem);
