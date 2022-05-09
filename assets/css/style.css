@@ -21,6 +21,7 @@ body {
 }
 
 /* styles my header to be across the entire top of the page. */
+
 header {
     display: inline;
     position: relative;
@@ -40,32 +41,32 @@ header {
     box-shadow: .15rem 0 1px var(--primary-bkgd-clr);
 }
 
-/* Styles my logo. */
+    /* Styles my logo. */   
 .primary-logo {
     color: #2e132e;
     filter: drop-shadow(0 0 .2rem var(--alt-txt-clr));
 }
 
-/* "turns off" the menu icon */
+    /* "turns off" the menu icon */
 .mobile-nav-toggle {
     display: none;
 }
 
-/* Styles my nav as a whole. */
+    /* Styles my nav as a whole. */
 nav {
     position: relative;
     margin-bottom: 0;
     float: right;
 }
 
-/* Styles the ul inside my nav element. */
+    /* Styles the ul inside my nav element. */
 nav .primary-nav li {
     position: relative;
     display: block;
     align-content: center;
 }
 
-/* adds decorative lines between nav items. */
+    /* adds decorative lines between nav items. */
 nav .primary-nav li:not(:first-child)::after{
     content: ""; 
     border: .25em solid var(--pseudo-clr);
@@ -76,7 +77,7 @@ nav .primary-nav li:not(:first-child)::after{
     width: 100%;
   }
 
-/* Styles the a links inside the list items in the nav. */
+    /* Styles the a links inside the list items in the nav. */
 nav .primary-nav li a {
     position: relative;
     font-size: 1.4em;
@@ -88,19 +89,35 @@ nav .primary-nav li a {
     text-decoration: none;
 }
 
+/* Generic styling for all of the main */
+
 main {
     color: var(--primary-txt-clr);
+    position: relative;
 }
+
+
 
 main .pseudo-false::before {
     content: "<html>";
-    margin-left: 1.5rem;
+    padding-left: 1.5rem;
     margin-top: .5rem;
 }
 
 main .pseudo-false::after {
     content: "<body>";
     margin-left: 2.45rem;
+}
+
+.avatar-container {
+    position: absolute;
+    top: 32rem;
+    right: -14.5rem;
+}
+
+.avatar {
+    height: 25rem;
+    transform: rotate(-18deg);
 }
 
 main h1 {
@@ -166,16 +183,16 @@ main .section-heading {
 }
 
 .work-secondary {
-    display: flex;
     justify-content: center;
     margin-top: 1.5rem;
     margin-bottom: 7rem;
 }
 
 .work-block {
-    display: inline-block;
     text-align: center;
     height: 9rem;
+    line-height: 9rem;
+    margin-bottom: 1rem;
 }
 
 #horiseon, #password-gen {
@@ -204,8 +221,8 @@ main .section-heading {
     top: -8.15rem;
     left: 0;
     width: 100%;
-    /* height: 100%; */
-    background: rgba(0,0,0,0.7);
+    height: 9rem;
+    background: rgba(0,0,0,0.8);
     opacity: 0;
 }
 
@@ -403,8 +420,8 @@ form label {
 
 #false-end::after {
     content: "</html>";
-    display: block;
-    margin-left: .5rem;
+    display: flex;
+    padding-left: 1.5rem;
 }
 
 main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, .about::before, .skills::before, #preform::before, #false-end::before {
@@ -466,7 +483,9 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         right: 2rem;
     }
 
-    
+    main .pseudo-false::before {
+        padding-top: 6.5rem;
+    }
 }
 
 @media screen and (max-width: 60rem) and (min-width: 35rem) {
@@ -503,6 +522,15 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         height: 100%;
     }
 
+    .avatar-container {
+        top: 4rem;
+        right: clamp(-22rem, -35vw, -17rem);
+    }
+    
+    .avatar {
+        height: clamp(30rem, 70vw, 45rem);
+    }
+
     main h1 {
         font-size: clamp(2.4rem, 10vw, 5rem)
     }
@@ -515,11 +543,23 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         font-size: clamp(4.7rem, 15vw, 9rem);
     }
 
-    .h3-before, .h3-after, #pseudo-false::before, #pseudo-false::after ,#false-end::before, #false-end::after{
+    .h3-before, .h3-after, #pseudo-false::before, #pseudo-false::after, main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, .about::before, .skills::before, #preform::before, #false-end::before, main h1::after, main h2::after, .h3-after, .about::after, .skills::after, .form-section::after, #false-end::after {
         font-size: clamp(1rem, 2.5vw, 1.5rem);
     }
-    
-    
+
+    .work-primary {
+        height: 18rem;
+    }
+
+    .work-block {
+        height: 14rem;
+        line-height: 14rem;
+    }
+
+    .work-secondary-text-container {
+        top: -13.15rem;
+        height: 13.99rem;
+    }
 
     main .about, main .skills {
         font-size: clamp(1rem, 4.65vw, 2rem);
@@ -597,6 +637,15 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         height: 100%;
     }
 
+    .avatar-container {
+        top: 4rem;
+        right: clamp(-40rem, -40vw, -22rem);
+    }
+    
+    .avatar {
+        height: clamp(45rem, 75vw, 60rem);
+    }
+
     main h1 {
         font-size: clamp(2.4rem, 10vw, 6rem)
     }
@@ -609,9 +658,30 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         font-size: clamp(4.7rem, 15vw, 15rem);
     }
 
-
     main .about, main .skills {
         font-size: clamp(1rem, 4.65vw, 2rem);
+    }
+
+    .h3-before, .h3-after, #pseudo-false::before, #pseudo-false::after, main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, .about::before, .skills::before, #preform::before, #false-end::before, main h1::after, main h2::after, .h3-after, .about::after, .skills::after, .form-section::after, #false-end::after {
+        font-size: 2rem;
+    }
+
+    .work-primary {
+        height: 33rem;
+    }
+
+    .work-block {
+        height: 28rem;
+        line-height: 28rem;
+    }
+
+    .work-secondary-text-container {
+        top: -27.15rem;
+        height: 28rem;
+    }
+
+    .work-text {
+        font-size: 4rem;
     }
 
     .skills-tree {
@@ -653,6 +723,14 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
 
     form label {
         font-size: clamp(1.15rem, 3vw, 2.25rem);
+    }
+
+    .socials {
+        justify-content: center;
+    }
+
+    .fa-instagram, .fa-linkedin, .fa-snapchat {
+        margin: 0 6rem;
     }
 }
 
