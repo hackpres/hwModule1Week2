@@ -52,6 +52,25 @@ header {
     display: none;
 }
 
+.menuIcon-top, .menuIcon-middle, .menuIcon-bottom {
+    height: .35rem;
+    width: 85%;
+    border-radius: 30px;
+    background-color: hsl(0, 0%, 71%);
+}
+
+.menuIcon-top, .menuIcon-middle {
+    margin-bottom: .25rem;
+}
+
+.menuIcon-top, .menuIcon-bottom {
+    float: right;
+}
+
+.menuIcon-middle {
+    float: left;
+}
+
     /* Styles my nav as a whole. */
 nav {
     position: relative;
@@ -459,7 +478,7 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
     }
 
     .primary-logo-container {
-        padding-right: 100%;
+        width: 100%;
     }
 
     @supports (backdrop-filter: blur(.25rem)) {
@@ -470,13 +489,11 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
     }
 
     .mobile-nav-toggle {
-        display: block;
+        display: inline-block;
         position: absolute;
+        background-color: hsl(286, 46%, 18%);
         z-index: 9999;
-        background: url("/assets/images/menuIcon.png");
-        background-repeat: no-repeat;
-        align-content: center;
-        width: 3.5em;
+        width: 2.25em;
         border: 0;
         aspect-ratio: 1;
         top: 2rem;
