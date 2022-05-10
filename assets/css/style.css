@@ -14,6 +14,7 @@ background-color: var(--primary-bkgd-clr);
 /* applys my primary font to the entire html doc. */
 html {
     font-family: var(--primary-font);
+    scroll-behavior: smooth;
 }
 
 body {
