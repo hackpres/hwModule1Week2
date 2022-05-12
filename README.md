@@ -28,10 +28,10 @@ However, I used this project to really try to stretch myself creatively. So my p
 
 ## Git links
 github repo url: 
-https://github.com/hackpres/hwModule1Week2
+https://github.com/hackpres/personalPortfolio
 
 github deployed url:
-https://hackpres.github.io/hwModule1Week2/
+https://hackpres.github.io/personalPortfolio/
 
 ## Screenshots of deployed app
 ![mobileSize](/assets/images/mobileSize.png?raw=true "Mobile view")
