@@ -31,7 +31,7 @@ github repo url:
 https://github.com/hackpres/personalPortfolio
 
 github deployed url:
-https://hackpres.github.io/personalPortfolio/
+https://hackpres.github.io/personalPortfolio
 
 ## Screenshots of deployed app
 ![mobileSize](/assets/images/mobileSize.png?raw=true "Mobile view")
@@ -46,7 +46,7 @@ Navigation of my portfolio is super easy, as I utilized id links for the nav bar
 I chose to add my work before "about me" because it's a portfolio site, and as such most viewers will be interested in seeing my work first. At the point that they are accessing my portfolio, they likely already know that I'm in web development, so I think giving them the work first feels cleaner. Then I am able to follow the work up with a quick statement about myself which helps to connect the work to a person (Me!).
 ![work](/assets/images/work.png?raw=true "Work section")
 
-I added a form so site users can send me information about themselves to make a connection that much easier.
+I added a form so site users can send me information about themselves to make a connection that much easier. Although it lacks an action at the moment, so the info has nowhere to be sent.
 ![form](./assets/images/form.png?raw=true "Form section")
 
 At the bottom of my site is a connect section with links to a few of my social media accounts. I used font-awesome icons (https://fontawesome.com/icons) for the links.
