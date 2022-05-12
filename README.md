@@ -1,4 +1,4 @@
-This weeks Challenge was to build a portfolio page from scratch. This challenge was very enjoyable to take on, and definitely stretched me as a developer. I'm proud of what I've created, and I look forward to refactoring it and making improvements later.
+This weeks Challenge was to build a portfolio page from scratch. This challenge was very enjoyable to take on, and definitely stretched me as a developer. I'm proud of what I've created, and I look forward to refactoring it and making improvements in the future.
 
 
 

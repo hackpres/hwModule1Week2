@@ -11,18 +11,47 @@
 background-color: var(--primary-bkgd-clr);
 }
 
-/* applys my primary font to the entire html doc. */
+/* GENERAL BASE STYLING */
+
+    /* applys my primary font to the entire html doc. */
 html {
     font-family: var(--primary-font);
     scroll-behavior: smooth;
 }
-
+    /* hides any overflow so my screen doesnt take on a horizontal scroll */
 body {
     overflow-x: hidden;
 }
+    /* Used to more specifically style my flex items. */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+    /* Allows me to visually remove the menu button at larger screen sizes while maintaining accessability for screen readers. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+    /* Styling for Section Headings */
+main .section-heading {
+    font-size: 4.6em;
+    margin-left: 1.5rem;
+    color: var(--alt-txt-clr);
+    opacity: 40%;
+    filter: drop-shadow(-.15rem -.15rem .08rem var(--primary-txt-clr));
+    display: inline;
+}
 
-/* styles my header to be across the entire top of the page. */
+/* HEADER STYLING */
 
+    /* styles my header to be across the entire top of the page. */
 header {
     display: inline;
     position: relative;
@@ -31,7 +60,7 @@ header {
     background-color: var(--dark-clr);
     box-shadow: 0.1rem 1px var(--alt-txt-clr);
 }
-
+    /* style for my logo container */
 .primary-logo-container {
     position: absolute;
     top: 0;
@@ -41,18 +70,16 @@ header {
     background-color: hsl(286, 46%, 18%);
     box-shadow: .15rem 0 1px var(--primary-bkgd-clr);
 }
-
     /* Styles my logo. */   
 .primary-logo {
     color: #2e132e;
     filter: drop-shadow(0 0 .2rem var(--alt-txt-clr));
 }
-
     /* "turns off" the menu icon */
 .mobile-nav-toggle {
     display: none;
 }
-
+    /* styles the three divs that make up my hamburger menu btn */
 .menuIcon-top, 
 .menuIcon-middle, 
 .menuIcon-bottom {
@@ -61,35 +88,29 @@ header {
     border-radius: 30px;
     background-color: hsl(0, 0%, 71%);
 }
-
 .menuIcon-top, 
 .menuIcon-middle {
     margin-bottom: .25rem;
 }
-
 .menuIcon-top, 
 .menuIcon-bottom {
     float: right;
 }
-
 .menuIcon-middle {
     float: left;
 }
-
     /* Styles my nav as a whole. */
 nav {
     position: relative;
     margin-bottom: 0;
     float: right;
 }
-
     /* Styles the ul inside my nav element. */
 nav .primary-nav li {
     position: relative;
     display: block;
     align-content: center;
 }
-
     /* adds decorative lines between nav items. */
 nav .primary-nav li:not(:first-child)::after{
     content: ""; 
@@ -100,7 +121,6 @@ nav .primary-nav li:not(:first-child)::after{
     right: 0; 
     width: 100%;
   }
-
     /* Styles the a links inside the list items in the nav. */
 nav .primary-nav li a {
     position: relative;
@@ -113,57 +133,39 @@ nav .primary-nav li a {
     text-decoration: none;
 }
 
-/* Generic styling for all of the main */
+/* GENERAL MAIN STYLING */
 
 main {
     color: var(--primary-txt-clr);
     position: relative;
 }
 
+/* TITLE SECTION */
 
-
-main .pseudo-false::before {
-    content: "<html>";
-    padding-left: 1.5rem;
-    margin-top: .5rem;
-}
-
-main .pseudo-false::after {
-    content: "<body>";
-    margin-left: 2.45rem;
-}
-
+    /* positions my avatar on the page */
 .avatar-container {
     position: absolute;
     top: 32rem;
     right: 0
 }
-
+    /* changes the height of my avatar */
 .avatar {
     height: 25rem;
 }
-
+    /* styles my header */
 main h1 {
     font-size: 2.4rem;
     font-weight: 200;
     margin: 10rem 0 1.5rem 3.5rem;
 }
-
+    /* styles my name within the header */
 .hacker {
     color: var(--alt-txt-clr);
     --webkit-text-stroke-width: 1px var(--primary-txt-clr);
     text-shadow: -1px 1px 2px var(--alt-txt-clr);
     
 }
-
-main h1::before {
-    content: "<h1>";
-}
-
-main h1::after {
-    content: "</h1>";
-}
-
+    /* styles my h2 within the header */
 main h2 {
     font-size: 1.3rem;
     font-weight: 200;
@@ -171,31 +173,9 @@ main h2 {
     position: relative;
 }
 
-main h2::before {
-    content: "<h2>";
-}
+/* WORK PROJECTS STYLING */
 
-main h2::after {
-    content: "</h2>";
-    }
-
-main .section-heading {
-    font-size: 4.6em;
-    margin-left: 1.5rem;
-    color: var(--alt-txt-clr);
-    opacity: 40%;
-    filter: drop-shadow(-.15rem -.15rem .08rem var(--primary-txt-clr));
-    display: inline;
-}
-
-.h3-before {
-    margin-left: 3.5rem;
-}
-
-.h3-after {
-    display: inline;
-}
-
+    /* positions and styles my featured work project */
 .work-primary {
     flex: 1;
     flex-basis: 100%;
@@ -204,28 +184,25 @@ main .section-heading {
     text-align: center;
     height: 10rem;
 }
-
+    /* positions and styles my secondary work projects */
 .work-secondary {
     justify-content: center;
     margin-top: 1.5rem;
     margin-bottom: 7rem;
 }
-
 .work-block {
     text-align: center;
     height: 9rem;
     line-height: 9rem;
     margin-bottom: 1rem;
 }
-
 #horiseon, #password-gen {
     height: 100%;
 }
-
 #jf-form, #horiseon, #password-gen {
     position: relative;
 }
-
+    /* positions and styles the text container for my featured work project, while giving it an opacity of 0 */
 .work-text-container {
     position: absolute;
     top: 0;
@@ -238,7 +215,7 @@ main .section-heading {
     justify-content: center;
     opacity: 0;
 }
-
+    /* positions and styles the text container for my secondary work projects, while giving them an opacity of 0 */
 .work-secondary-text-container {
     position: absolute;
     top: -8.15rem;
@@ -248,15 +225,17 @@ main .section-heading {
     background: rgba(0,0,0,0.8);
     opacity: 0;
 }
-
+    /* styles the text for my work projects */
 .work-text {
     font-size: 2rem;
     color: var(--primary-txt-clr);
 }
-
+    /* adds a hover effect on my work projects that displays the project title over the image on hover */
 .work-text-container:hover, .work-secondary-text-container:hover {
     opacity: 1;
 }
+
+/* ABOUT STYLING */
 
 .about {
     font-family: var(--primary-font);
@@ -265,22 +244,7 @@ main .section-heading {
     line-height: 1.15em;
 }
 
-.about::before, .skills::before {
-    content: "<p>";
-}
-
-.about::after, .skills::after {
-    content: "</p>";
-}
-
-#contact-link {
-    color: var(--primary-txt-clr);
-    text-decoration: none;
-}
-
-#contact-link:hover {
-    cursor: pointer;
-}
+/* SKILLS STYLING */
 
 .skills {
     font-family: var(--primary-font);
@@ -288,43 +252,39 @@ main .section-heading {
     width: 70%;
     line-height: 1.15em;
 }
-
+    /* gives the skill tree the proper spacing before the form section */
 .skills-tree {
     margin-bottom: 16rem;
 }
-
+    /* positioning and stying for the html, css, and js logos */
 .skills-tree ul {
     list-style: none;
     position: relative;
     
 }
-
 .skills-tree ul li {
     position: absolute;
 }
-
 .skills-tree ul .html-logo-container {
     transform: translateX(150px);
 }
-
 .skills-tree ul .css-logo-container {
     transform: translate(100px, 90px);
 }
-
 .skills-tree ul .js-logo-container {
     transform: translate(200px, 90px);
 }
-
 .html-logo-container, .css-logo-container, .js-logo-container {
     width: 20%;
 }
-
 .html-logo, .css-logo, .js-logo {
     width: 70%;
     height: 70%;
     object-fit: cover;
     filter: drop-shadow(0 0 2rem var(--dark-clr));
 }
+
+/* FORM STYLING */
 
 .form-container {
     display: flex;
@@ -335,7 +295,7 @@ main .section-heading {
 form {
     text-align: center;
 }
-
+    /* styles the form elements with a type of "text" */
 input[type="text"] ,select, textarea {
     display: flex;
     justify-content: center;
@@ -351,32 +311,30 @@ input[type="text"] ,select, textarea {
     color: var(--alt-txt-clr);
     resize: none;
 }
-
+    /* changes the styling of form elements with a type of "text" when they are in focus */
 input[type="text"]:focus ,select:focus, textarea:focus {
     border: 2px solid var(--alt-txt-clr);
     filter: drop-shadow(0rem 0rem 0.15rem var(--dark-clr));
     color: var(--alt-txt-clr);
 }
-
+    /* styles the placeholders for the form elements with a type of "text" */
 input[type="text"]::placeholder ,select::placeholder, textarea::placeholder {
     color: var(--alt-txt-clr);
 }
-
+    /* styles the form labels */
 form label {
     color: var(--primary-txt-clr);
     font-size: 1.15em;
     display: block;
     margin-bottom: .8rem;
 }
-
 #fname, #lname, #company, #country, #details {
     display: inline-block;
 }
-
 #details {
     height: 9rem;
 }
-
+    /* styles the submit button */
 .submit {
     width: 30%;
     text-align: center;
@@ -388,16 +346,77 @@ form label {
     border: 2px solid var(--dark-clr);
     border-radius: .35rem;
 }
-
 .submit:hover {
     box-shadow: inset 0 -.25em .45em var(--pseudo-clr);
 }
 
+/* CONNECT SECTION STYLING */
+
+    /* positions the social media icons */
+.socials {
+    list-style: none;
+    display: flex;
+    margin: 3rem;
+    justify-content: space-around;
+}
+    /* styles the Font Awesome social media icons */
+.fa {
+    padding: 1rem;
+    border-radius: .35em;
+    box-shadow: 0 0 .25rem .15rem var(--dark-clr);
+}
+.fa:hover {
+    opacity: 0.5;
+}
+.fa-instagram, .fa-linkedin, .fa-snapchat {
+    background: var(--alt-txt-clr-dim);
+    color: var(--dark-clr);
+    text-decoration: none;
+}
+
+/* PSEUDO ELEMENTS AND THEIR STYLING */
+    /* all of these are just for cosmetics, they don't have any functionality and should be ignored by screen readers */
+
+    /* Styling for the p elements before section headings of about and skills where pseudo elements didn't work as they would take on the drop shadow of their parent */
+.h3-before {
+    margin-left: 3.5rem;
+}
+    /* Styling for the p elements after section headings of about and skills where pseudo elements didn't work as they would take on the drop shadow of their parent */
+.h3-after {
+    display: inline;
+}
+    /* style and position for the various cosmetic pseudo elements */
+main .pseudo-false::before {
+    content: "<html>";
+    padding-left: 1.5rem;
+    margin-top: .5rem;
+}
+main .pseudo-false::after {
+    content: "<body>";
+    margin-left: 2.45rem;
+}
+main h1::before {
+    content: "<h1>";
+}
+main h1::after {
+    content: "</h1>";
+}
+main h2::before {
+    content: "<h2>";
+}
+main h2::after {
+    content: "</h2>";
+}
+.about::before, .skills::before {
+    content: "<p>";
+}
+.about::after, .skills::after {
+    content: "</p>";
+}
 #preform::before {
     content: "<form>";
     margin-left: 3.5rem;
 }
-
 .form-section::after {
     content: "</form>";
     margin-left: 3.5rem;
@@ -406,47 +425,20 @@ form label {
     font-family: var(--pseudo-font);
     z-index: -1;
 }
-
-.socials {
-    list-style: none;
-    display: flex;
-    margin: 3rem;
-    justify-content: space-around;
-}
-
-.fa {
-    padding: 1rem;
-    border-radius: .35em;
-    box-shadow: 0 0 .25rem .15rem var(--dark-clr);
-}
-
-.fa:hover {
-    opacity: 0.5;
-}
-
-.fa-instagram, .fa-linkedin, .fa-snapchat {
-    background: var(--alt-txt-clr-dim);
-    color: var(--dark-clr);
-    text-decoration: none;
-}
-
 #false-end {
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
-
 #false-end::before {
     content: "</body>";
     display: block;
     margin-left: 2.45rem;
 }
-
 #false-end::after {
     content: "</html>";
     display: flex;
     padding-left: 1.5rem;
 }
-
 main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2::before, .h3-before, .about::before, .skills::before, #preform::before, #false-end::before {
     display: block;
     font-size: 1rem;
@@ -455,7 +447,6 @@ main .pseudo-false::before, main .pseudo-false::after, main h1::before, main h2:
     z-index: -1;
     margin-block: .25rem;
 }
-
 main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false-end::after {
     font-size: medium;
     color: var(--pseudo-clr);
@@ -464,8 +455,11 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
     margin-inline: .25rem;
 }
 
+/* MEDIA QUERRIES */
+
 /* Adds a media querry that adjusts the nav and adds the mobile-nav-toggle button in at smaller screen sizes. */
 @media screen and (max-width: 35em) {
+        /* styles and positions the primary nav as a menu pop out for mobile */
     .primary-nav {
         position: fixed;
         z-index: 1000;
@@ -480,18 +474,18 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
     .primary-nav[data-visible="true"] {
         transform: translateX(0%);
     }
-
+        /* extends the logo containers background to fill the space across the "navbar" */
     .primary-logo-container {
         width: 100%;
     }
-
+        /* not all browsers support blur, so this checks if the browser does, and only applies the styling if it is supported */
     @supports (backdrop-filter: blur(.25rem)) {
         .primary-nav {
             background: hsl(300 42% 13% / 0.5);
             backdrop-filter: blur(.25rem);
         }
     }
-
+        /* style for the hamburger menu btn */
     .mobile-nav-toggle {
         display: inline-block;
         position: absolute;
@@ -503,12 +497,12 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         top: 2rem;
         right: 2rem;
     }
-
+        /* repositions the <html> and <body> pseudo elements because the navbar moving pushes them up behind the logo */
     main .pseudo-false::before {
         padding-top: 6.5rem;
     }
 }
-
+        /* media querry for tablet size screens */
 @media screen and (max-width: 60rem) and (min-width: 35rem) {
     header {
         justify-content: flex-end;
@@ -623,7 +617,7 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
         font-size: clamp(1.15rem, 3vw, 1.75rem);
     }
 }
-
+        /* media querry for desktop screens */
 @media screen and (min-width: 60rem) {
     header {
         justify-content: flex-end;
@@ -753,23 +747,4 @@ main h1::after, main h2::after, .h3-after, .about::after, .skills::after, #false
     .fa-instagram, .fa-linkedin, .fa-snapchat {
         margin: 0 6rem;
     }
-}
-
-/* Used to more specifically style my flex items. */
-.flex {
-    display: flex;
-    gap: var(--gap, 1rem);
-}
-
-/* Allows me to visually remove the menu button at larger screen sizes while maintaining accessability for screen readers. */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
